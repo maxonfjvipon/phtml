@@ -59,13 +59,13 @@ final class Attributes extends TxtWrap
                         new ArrMapped(
                             $attributes,
                             fn (string|int $name, string $attribute) => new TxtJoined([
-                                is_int($name) ? "" : "$name='",
+                                ($isInt = is_int($name)) ? "" : "$name='",
                                 new TxtReplaced(
                                     "'",
                                     self::UNICODE_APOSTROPHE,
                                     $attribute,
                                 ),
-                                "' "
+                                $isInt ? " " : "' "
                             ])
                         )
                     )
