@@ -49,7 +49,9 @@ composer require maxonfjvipon/phtml
 
 ### basic:
 
-Library provides all html tags as functions with only one exception - `<var></var>`. PHP does not allow you to create function named `var` since this word is reserved. So to create `<var></var>` tag use `_var` function (if you know more elegant way to handle this `<var></var>` - please let me know)
+Library provides all html tags as functions with only one exception - `<var></var>`. PHP does not allow you to create function named `var` since this word is reserved. So to create `<var></var>` tag use `_var` function 
+
+#### ***(if you know more elegant way to handle this `<var></var>` - please create an issue)***
 
 This code
 
@@ -110,7 +112,9 @@ html5(attr([at::lang => "en"]))->asString(); // <!DOCTYPE html><html lang='en'><
 ```
 
 #### Note!
-`at::class` will return you `\Maxonfjvipon\Phtml\at` instead of expected `'class'` (since `::class` is reserved by PHP, if it's possible to override and you know how to do it - please let me know).
+`at::class` will return you `\Maxonfjvipon\Phtml\at` instead of expected `'class'` (since `::class` is reserved by PHP)
+
+#### ***(if it's possible to override this `::class` and you know how to do it - please create an issue)***
 
 To get `'class'` string from `at` you can do `at::_class` or `at::$class`. Or you can just write it manually
 
@@ -118,6 +122,7 @@ To get `'class'` string from `at` you can do `at::_class` or `at::$class`. Or yo
 use Maxonfjvipon\Phtml\at;
 use function Maxonfjvipon\Phtml\{html5, attr};
 
+attr([at::class => 'main'])->asString(); // \Maxonfjvipon\Phtml\at='main'
 attr(['class' => 'main'])->asString(); // class='main'
 attr([at::$class => 'main'])->asString(); // class='main'
 attr([at::_class => 'main'])->asString(); // class='main'
@@ -177,7 +182,7 @@ will be turned into:
 
 If you want to use all available tags and functions you have to add this import.
 
-(**If you know how to make this import shorter - please let me know**)
+#### ***(if you know how to make this whole import shorter - please create an issue)***
 
 Keep in mind that some tag functions have the same name as built in php functions (like `\header()`, `\time()`, etc). 
 So make sure that you have imported these functions before using them.
