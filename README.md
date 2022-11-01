@@ -2,6 +2,8 @@
 
 phtml is pure object-oriented HTML construction templating library for PHP with functional interface, inspired by [JavaTags](https://github.com/manlioGit/javatags) and [ScalaTags](https://github.com/lihaoyi/scalatags). 
 
+[![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org)
+
 This fragment:
 
 ```php
@@ -47,7 +49,7 @@ composer require maxonfjvipon/phtml
 
 ### basic:
 
-Library provides all html tags as functions with only one exception - `<var></var>`. PHP does not allow you to create function named `var` since as this word is reserved. So to create `<var></var>` tag use `_var` function.
+Library provides all html tags as functions with only one exception - `<var></var>`. PHP does not allow you to create function named `var` since this word is reserved. So to create `<var></var>` tag use `_var` function (if you know more elegant way to handle this `<var></var>` - please let me know)
 
 This code
 
@@ -97,7 +99,7 @@ div(attr(['class' => 'div']), div())->asString(); // <div class='div'><div></div
 div(div(), attr(['class' => 'div']))->asString(); // <div><div></div></div>
 ```
 
-Library provides helper class `at` that contains all existed html attributes as consts.
+Library provides helper class `Maxonfjvipon\Phtml\at` that contains all existed html attributes as consts.
 You can use it in this way:
 
 ```php
@@ -108,7 +110,7 @@ html5(attr([at::lang => "en"]))->asString(); // <!DOCTYPE html><html lang='en'><
 ```
 
 #### Note!
-`at::class` will return you `\Maxonfjvipon\Phtml\at` instead of expected `'class'`.
+`at::class` will return you `\Maxonfjvipon\Phtml\at` instead of expected `'class'` (since `::class` is reserved by PHP, if it's possible to override and you know how to do it - please let me know).
 
 To get `'class'` string from `at` you can do `at::_class` or `at::$class`. Or you can just write it manually
 
@@ -122,12 +124,64 @@ attr([at::_class => 'main'])->asString(); // class='main'
 ```
 
 ### Helpers:
-So if you want to use all available tags and functions you have to add this import 
 
-**If you know how to make this import shorter - please let me know**.
+#### Custom tags
 
-Keep in mind that some tag functions have the same name as built php functions (like `\header()`, `\time()`, etc). 
+You can create your custom tags using 2 helper functions: `paired` and `unpaired`:
+```php
+use function Maxonfjvipon\Phtml\{unpaired, paired};
+
+unpaired('somebody', attr(['class' => 'custom unpaired']))->asString(); // <somebody class='custom unpaired'/>
+paired('somebody', attr(['class' => 'custom paired']))->asString(); // <somebody class='custom paired'></somebody>
+```
+
+If you want to add many tags (for example from array) you can use `tags` function:
+
+```php
+use function Maxonfjvipon\Phtml\{tags, div, unpaired, link};
+
+tags(div(), unpaired('my'), link())->asString(); // <div></div><my/><link/>
+```
+
+#### Strings, Tags and Texts
+
+Library is based on `Maxonfjvipon\ElegantElephant\Txt` class from [ElegantElephant](https://github.com/maxonfjvipon/ElegantElephant).
+So besides attributes every paired tag can accept other tags, strings and Texts.
+
+This tag:
+
+```php
+use Maxonfjvipon\ElegantElephant\TxtOf;
+use function Maxonfjvipon\Phtml\{div, link};
+
+div(attr(['class' => 'main']),
+  link(), // other tag
+  TxtOf::str('text'), // Text
+  text("alias"), // wrap string to Maxonfjvipon\ElegantElephant\Txt
+  "just string",
+)->asString();
+```
+
+will be turned into:
+
+```html
+<div class='main'>
+  <link/>\n
+  text\n
+  alias\n
+  just string\n
+</div>
+```
+
+#### Import
+
+If you want to use all available tags and functions you have to add this import.
+
+(**If you know how to make this import shorter - please let me know**)
+
+Keep in mind that some tag functions have the same name as built in php functions (like `\header()`, `\time()`, etc). 
 So make sure that you have imported these functions before using them.
+
 ```php
 use function Maxonfjvipon\Phtml\{
     text,
@@ -246,3 +300,7 @@ use function Maxonfjvipon\Phtml\{
     xmp
 };
 ```
+
+### Tests
+
+See [unit tests](https://github.com/maxonfjvipon/phtml/tree/master/tests) to get more details.
