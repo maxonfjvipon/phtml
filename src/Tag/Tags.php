@@ -28,6 +28,7 @@ namespace Maxonfjvipon\Phtml\Tag;
 
 use Maxonfjvipon\ElegantElephant\Arr\ArrMapped;
 use Maxonfjvipon\ElegantElephant\Txt;
+use Maxonfjvipon\ElegantElephant\Txt\EnsureTxt;
 use Maxonfjvipon\ElegantElephant\Txt\TxtRtrimmed;
 use Maxonfjvipon\ElegantElephant\Txt\TxtToString;
 use Maxonfjvipon\ElegantElephant\Txt\TxtWrap;
@@ -42,20 +43,20 @@ use Maxonfjvipon\Phtml\Tag;
  */
 final class Tags extends TxtWrap implements Tag
 {
-    use TxtToString;
+    use EnsureTxt;
 
     /**
      * Ctor.
-     * @param Txt|Tag ...$tags Tags
+     * @param string|Tag|Txt ...$tags Tags or texts
      */
-    final public function __construct(Txt|Tag ...$tags)
+    final public function __construct(string|Tag|Txt ...$tags)
     {
         parent::__construct(
             new TxtRtrimmed(
                 new TxtJoined(
                     new ArrMapped(
                         $tags,
-                        fn(Tag|Txt $tag) => $tag->asString() . "\n"
+                        fn(string|Tag|Txt $tag) => $this->ensuredString($tag) . "\n"
                     )
                 )
             )

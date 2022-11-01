@@ -21,10 +21,11 @@ final class TagsTest extends TestCase
     {
         $this->assertTxtThat(
             new Tags(
+                "String",
                 TxtOf::str("<var/>"),
                 new TgPaired('xx')
             ),
-            new IsEqual("<var/>\n<xx>\n</xx>")
+            new IsEqual("String\n<var/>\n<xx>\n</xx>")
         );
     }
 }

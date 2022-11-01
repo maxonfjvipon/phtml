@@ -48,14 +48,14 @@ function unpaired(string $name, ?Attributes $attributes = null): Tag
  * Create paired tag.
  *
  * @param string $name
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
 function paired(
     string                         $name,
-    Attributes|Tag|Txt|null $any = null,
-    Tag|Txt                 ...$elements
+    string|Attributes|Tag|Txt|null $any = null,
+    string|Tag|Txt                 ...$elements
 ): Tag
 {
     return new TgPaired($name, $any, ...$elements);
@@ -86,9 +86,9 @@ function text(string $text = ''): Txt
 /**
  * Create tags.
  *
- * @param Txt|Tag ...$tags
+ * @param string|Txt|Tag ...$tags
  */
-function tags(Txt|Tag ...$tags): Tag
+function tags(string|Txt|Tag ...$tags): Tag
 {
     return new Tags(...$tags);
 }
@@ -100,11 +100,11 @@ function tags(Txt|Tag ...$tags): Tag
 /**
  * Create <html></html> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function html5(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function html5(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return tags(text("<!DOCTYPE html>"), paired("html", $any, ...$elements));
 }
@@ -113,11 +113,11 @@ function html5(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <a></a> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function a(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function a(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('a', $any, ...$elements);
 }
@@ -125,11 +125,11 @@ function a(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <abbr></abbr> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function abbr(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function abbr(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('abbr', $any, ...$elements);
 }
@@ -137,11 +137,11 @@ function abbr(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <address></address> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function address(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function address(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('address', $any, ...$elements);
 }
@@ -149,11 +149,11 @@ function address(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <article></article> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function article(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function article(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('article', $any, ...$elements);
 }
@@ -161,11 +161,11 @@ function article(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <aside></aside> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function aside(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function aside(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('aside', $any, ...$elements);
 }
@@ -173,11 +173,11 @@ function aside(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <audio></audio> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function audio(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function audio(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('audio', $any, ...$elements);
 }
@@ -185,11 +185,11 @@ function audio(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <b></b> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function b(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function b(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('b', $any, ...$elements);
 }
@@ -197,11 +197,11 @@ function b(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <bdi></bdi> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function bdi(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function bdi(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('bdi', $any, ...$elements);
 }
@@ -209,11 +209,11 @@ function bdi(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <ddo></ddo> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function ddo(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function ddo(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('ddo', $any, ...$elements);
 }
@@ -221,11 +221,11 @@ function ddo(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <blockquote></blockquote> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function blockquote(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function blockquote(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('blockquote', $any, ...$elements);
 }
@@ -233,11 +233,11 @@ function blockquote(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): 
 /**
  * Create <body></body> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function body(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function body(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('body', $any, ...$elements);
 }
@@ -245,11 +245,11 @@ function body(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <button></button> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function button(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function button(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('button', $any, ...$elements);
 }
@@ -257,11 +257,11 @@ function button(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <canvas></canvas> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function canvas(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function canvas(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('canvas', $any, ...$elements);
 }
@@ -269,11 +269,11 @@ function canvas(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <caption></caption> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function caption(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function caption(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('caption', $any, ...$elements);
 }
@@ -281,11 +281,11 @@ function caption(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <cite></cite> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function cite(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function cite(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('cite', $any, ...$elements);
 }
@@ -293,11 +293,11 @@ function cite(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <code></code> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function code(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function code(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('code', $any, ...$elements);
 }
@@ -305,11 +305,11 @@ function code(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <colgroup></colgroup> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function colgroup(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function colgroup(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('colgroup', $any, ...$elements);
 }
@@ -317,11 +317,11 @@ function colgroup(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Ta
 /**
  * Create <data></data> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function data(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function data(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('data', $any, ...$elements);
 }
@@ -329,11 +329,11 @@ function data(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <datalist></datalist> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function datalist(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function datalist(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('datalist', $any, ...$elements);
 }
@@ -341,11 +341,11 @@ function datalist(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Ta
 /**
  * Create <dd></dd> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function dd(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function dd(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('dd', $any, ...$elements);
 }
@@ -353,11 +353,11 @@ function dd(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <del></del> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function del(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function del(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('del', $any, ...$elements);
 }
@@ -365,11 +365,11 @@ function del(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <dfn></dfn> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function dfn(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function dfn(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('dfn', $any, ...$elements);
 }
@@ -377,11 +377,11 @@ function dfn(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <div></div> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function div(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function div(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('div', $any, ...$elements);
 }
@@ -389,11 +389,11 @@ function div(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <dl></dl> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function dl(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function dl(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('dl', $any, ...$elements);
 }
@@ -401,11 +401,11 @@ function dl(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <dt></dt> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function dt(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function dt(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('dt', $any, ...$elements);
 }
@@ -413,11 +413,11 @@ function dt(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <em></em> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function em(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function em(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('em', $any, ...$elements);
 }
@@ -425,11 +425,11 @@ function em(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <fieldset></fieldset> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function fieldset(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function fieldset(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('fieldset', $any, ...$elements);
 }
@@ -437,11 +437,11 @@ function fieldset(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Ta
 /**
  * Create <figcaption></figcaption> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function figcaption(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function figcaption(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('figcaption', $any, ...$elements);
 }
@@ -449,11 +449,11 @@ function figcaption(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): 
 /**
  * Create <figure></figure> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function figure(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function figure(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('figure', $any, ...$elements);
 }
@@ -461,11 +461,11 @@ function figure(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <footer></footer> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function footer(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function footer(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('footer', $any, ...$elements);
 }
@@ -473,11 +473,11 @@ function footer(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <form></form> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function form(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function form(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('form', $any, ...$elements);
 }
@@ -485,11 +485,11 @@ function form(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <h1></h1> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function h1(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function h1(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('h1', $any, ...$elements);
 }
@@ -497,11 +497,11 @@ function h1(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <h2></h2> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function h2(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function h2(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('h2', $any, ...$elements);
 }
@@ -509,11 +509,11 @@ function h2(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <h3></h3> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function h3(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function h3(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('h3', $any, ...$elements);
 }
@@ -521,11 +521,11 @@ function h3(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <h4></h4> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function h4(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function h4(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('h4', $any, ...$elements);
 }
@@ -533,11 +533,11 @@ function h4(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <h5></h5> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function h5(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function h5(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('h5', $any, ...$elements);
 }
@@ -545,11 +545,11 @@ function h5(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <h6></h6> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function h6(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function h6(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('h6', $any, ...$elements);
 }
@@ -557,11 +557,11 @@ function h6(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <head></head> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function head(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function head(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('head', $any, ...$elements);
 }
@@ -569,11 +569,11 @@ function head(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <header></header> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function header(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function header(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('header', $any, ...$elements);
 }
@@ -581,11 +581,11 @@ function header(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <i></i> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function i(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function i(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('i', $any, ...$elements);
 }
@@ -593,11 +593,11 @@ function i(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <iframe></iframe> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function iframe(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function iframe(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('iframe', $any, ...$elements);
 }
@@ -605,11 +605,11 @@ function iframe(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <ins></ins> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function ins(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function ins(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('ins', $any, ...$elements);
 }
@@ -617,11 +617,11 @@ function ins(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <kbd></kbd> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function kbd(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function kbd(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('kbd', $any, ...$elements);
 }
@@ -629,11 +629,11 @@ function kbd(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <label></label> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function label(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function label(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('label', $any, ...$elements);
 }
@@ -641,11 +641,11 @@ function label(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <legend></legend> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function legend(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function legend(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('legend', $any, ...$elements);
 }
@@ -653,11 +653,11 @@ function legend(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <li></li> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function li(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function li(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('li', $any, ...$elements);
 }
@@ -665,11 +665,11 @@ function li(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <main></main> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function main(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function main(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('main', $any, ...$elements);
 }
@@ -677,11 +677,11 @@ function main(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <map></map> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function map(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function map(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('map', $any, ...$elements);
 }
@@ -689,11 +689,11 @@ function map(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <mark></mark> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function mark(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function mark(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('mark', $any, ...$elements);
 }
@@ -701,11 +701,11 @@ function mark(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <meter></meter> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function meter(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function meter(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('meter', $any, ...$elements);
 }
@@ -713,11 +713,11 @@ function meter(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <nav></nav> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function nav(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function nav(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('nav', $any, ...$elements);
 }
@@ -725,11 +725,11 @@ function nav(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <noscript></noscript> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function noscript(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function noscript(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('noscript', $any, ...$elements);
 }
@@ -737,11 +737,11 @@ function noscript(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Ta
 /**
  * Create <object></object> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function object(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function object(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('object', $any, ...$elements);
 }
@@ -749,11 +749,11 @@ function object(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <ol></ol> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function ol(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function ol(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('ol', $any, ...$elements);
 }
@@ -761,11 +761,11 @@ function ol(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <optgroup></optgroup> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function optgroup(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function optgroup(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('optgroup', $any, ...$elements);
 }
@@ -773,11 +773,11 @@ function optgroup(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Ta
 /**
  * Create <option></option> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function option(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function option(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('option', $any, ...$elements);
 }
@@ -785,11 +785,11 @@ function option(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <output></output> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function output(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function output(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('output', $any, ...$elements);
 }
@@ -797,11 +797,11 @@ function output(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <p></p> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function p(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function p(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('p', $any, ...$elements);
 }
@@ -809,11 +809,11 @@ function p(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <pre></pre> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function pre(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function pre(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('pre', $any, ...$elements);
 }
@@ -821,11 +821,11 @@ function pre(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <progress></progress> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function progress(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function progress(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('progress', $any, ...$elements);
 }
@@ -833,11 +833,11 @@ function progress(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Ta
 /**
  * Create <q></q> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function q(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function q(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('q', $any, ...$elements);
 }
@@ -845,11 +845,11 @@ function q(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <rb></rb> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function rb(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function rb(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('rb', $any, ...$elements);
 }
@@ -857,11 +857,11 @@ function rb(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <rp></rp> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function rp(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function rp(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('rp', $any, ...$elements);
 }
@@ -869,11 +869,11 @@ function rp(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <rt></rt> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function rt(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function rt(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('rt', $any, ...$elements);
 }
@@ -881,11 +881,11 @@ function rt(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <rtc></rtc> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function rtc(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function rtc(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('rtc', $any, ...$elements);
 }
@@ -893,11 +893,11 @@ function rtc(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <ruby></ruby> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function ruby(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function ruby(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('ruby', $any, ...$elements);
 }
@@ -905,11 +905,11 @@ function ruby(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <s></s> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function s(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function s(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('s', $any, ...$elements);
 }
@@ -917,11 +917,11 @@ function s(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <samp></samp> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function samp(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function samp(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('samp', $any, ...$elements);
 }
@@ -929,11 +929,11 @@ function samp(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <script></script> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function script(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function script(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('script', $any, ...$elements);
 }
@@ -941,11 +941,11 @@ function script(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <section></section> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function section(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function section(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('section', $any, ...$elements);
 }
@@ -953,11 +953,11 @@ function section(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <select></select> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function select(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function select(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('select', $any, ...$elements);
 }
@@ -965,11 +965,11 @@ function select(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <small></small> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function small(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function small(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('small', $any, ...$elements);
 }
@@ -977,11 +977,11 @@ function small(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <span></span> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function span(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function span(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('span', $any, ...$elements);
 }
@@ -989,11 +989,11 @@ function span(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <strong></strong> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function strong(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function strong(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('strong', $any, ...$elements);
 }
@@ -1001,11 +1001,11 @@ function strong(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <style></style> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function style(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function style(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('style', $any, ...$elements);
 }
@@ -1013,11 +1013,11 @@ function style(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <sub></sub> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function sub(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function sub(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('sub', $any, ...$elements);
 }
@@ -1025,11 +1025,11 @@ function sub(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <sup></sup> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function sup(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function sup(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('sup', $any, ...$elements);
 }
@@ -1037,11 +1037,11 @@ function sup(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <table></table> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function table(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function table(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('table', $any, ...$elements);
 }
@@ -1049,11 +1049,11 @@ function table(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <tbody></tbody> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function tbody(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function tbody(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('tbody', $any, ...$elements);
 }
@@ -1061,11 +1061,11 @@ function tbody(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <td></td> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function td(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function td(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('td', $any, ...$elements);
 }
@@ -1073,11 +1073,11 @@ function td(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <template></template> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function template(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function template(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('template', $any, ...$elements);
 }
@@ -1085,11 +1085,11 @@ function template(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Ta
 /**
  * Create <textarea></textarea> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function textarea(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function textarea(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('textarea', $any, ...$elements);
 }
@@ -1097,11 +1097,11 @@ function textarea(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Ta
 /**
  * Create <tfoot></tfoot> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function tfoot(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function tfoot(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('tfoot', $any, ...$elements);
 }
@@ -1109,11 +1109,11 @@ function tfoot(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <th></th> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function th(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function th(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('th', $any, ...$elements);
 }
@@ -1121,11 +1121,11 @@ function th(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <thead></thead> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function thead(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function thead(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('thead', $any, ...$elements);
 }
@@ -1133,11 +1133,11 @@ function thead(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <time></time> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function time(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function time(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('time', $any, ...$elements);
 }
@@ -1145,11 +1145,11 @@ function time(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <title></title> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function title(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function title(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('title', $any, ...$elements);
 }
@@ -1157,11 +1157,11 @@ function title(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <tr></tr> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function tr(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function tr(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('tr', $any, ...$elements);
 }
@@ -1169,11 +1169,11 @@ function tr(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <u></u> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function u(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function u(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('u', $any, ...$elements);
 }
@@ -1181,11 +1181,11 @@ function u(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <ul></ul> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function ul(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function ul(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('ul', $any, ...$elements);
 }
@@ -1193,11 +1193,11 @@ function ul(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <var></var> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function _var(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function _var(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('var', $any, ...$elements);
 }
@@ -1205,11 +1205,11 @@ function _var(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <video></video> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function video(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function video(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('video', $any, ...$elements);
 }
@@ -1217,11 +1217,11 @@ function video(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
 /**
  * Create <xmp></xmp> tag.
  *
- * @param Attributes|Tag|Txt|null $any
- * @param Tag|Txt ...$elements
+ * @param string|Attributes|Tag|Txt|null $any
+ * @param string|Tag|Txt ...$elements
  * @return Tag
  */
-function xmp(Attributes|Tag|Txt|null $any = null, Tag|Txt ...$elements): Tag
+function xmp(string|Attributes|Tag|Txt|null $any = null, string|Tag|Txt ...$elements): Tag
 {
     return paired('xmp', $any, ...$elements);
 }

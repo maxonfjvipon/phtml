@@ -54,13 +54,13 @@ final class TgPaired extends TxtWrap implements Tag
     /**
      * Ctor.
      * @param string $name Tag name
-     * @param Attributes|Tag|Txt|null $any Tag or Attributes
-     * @param Tag|Txt ...$elements Tags
+     * @param string|Txt|Attributes|Tag|null $any Tag or Attributes
+     * @param string|Tag|Txt ...$elements Tags or texts
      */
     final public function __construct(
         string $name,
-        Txt|Attributes|Tag|null $any = null,
-        Tag|Txt ...$elements
+        string|Attributes|Tag|Txt|null $any = null,
+        string|Tag|Txt ...$elements
     ) {
         parent::__construct(
             new TxtJoined([
@@ -79,7 +79,7 @@ final class TgPaired extends TxtWrap implements Tag
                 ),
                 ">\n",
                 new TxtIf(
-                    !!$any,
+                    $any !== null,
                     TxtOf::func(fn () => new TxtIf(
                         new IsNotEmpty(
                             $arr = new ArrSticky(
@@ -93,7 +93,7 @@ final class TgPaired extends TxtWrap implements Tag
                         TxtOf::func(fn () => new TxtJoined(
                             new ArrMapped(
                                 $arr,
-                                fn ($element) => new TxtIf(
+                                fn (string|Tag|Txt $element) => new TxtIf(
                                     new Not(new IsAttributes($element)),
                                     new TxtJoined([$element, "\n"])
                                 )

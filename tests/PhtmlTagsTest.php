@@ -1677,6 +1677,34 @@ final class PhtmlTagsTest extends TestCase
      * @return void
      * @throws Exception
      */
+    public function simpleHtml(): void
+    {
+        $this->assertTxtThat(
+            html5(attr([at::lang => 'en']),
+                head(
+                    meta(attr([at::http_equiv => 'Content-Type', at::content => 'text/html', at::charset => 'UTF-8'])),
+                    title(text("Title")),
+                    link(attr(["href" => "/css/custom.css", "rel" => "stylesheet"]))
+                )
+            ),
+            new IsEqual("<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta http-equiv='Content-Type' content='text/html' charset='UTF-8'/>
+<title>
+Title
+</title>
+<link href='/css/custom.css' rel='stylesheet'/>
+</head>
+</html>")
+        );
+    }
+
+    /**
+     * @test
+     * @return void
+     * @throws Exception
+     */
     public function complexHtml(): void
     {
         $this->assertTxtThat(

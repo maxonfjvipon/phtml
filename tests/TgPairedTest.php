@@ -98,15 +98,16 @@ final class TgPairedTest extends TestCase
      * @return void
      * @throws Exception
      */
-    public function withTxt(): void
+    public function withTxtAndString(): void
     {
         $this->assertTxtThat(
             new TgPaired(
                 "div",
                 new Attributes(['class' => 'block']),
                 TxtOf::str("hello world"),
+                "This is string"
             ),
-            new IsEqual("<div class='block'>\nhello world\n</div>")
+            new IsEqual("<div class='block'>\nhello world\nThis is string\n</div>")
         );
     }
 }
