@@ -17,7 +17,7 @@
     "php-coveralls/php-coveralls": "^2.5"
   },
   "scripts": {
-    "test": "vendor/bin/phpunit --exclude skip --coverage-clover build/logs/clover.xml"
+    "test": "vendor/bin/phpunit --exclude skip"
   },
   "autoload": {
     "psr-4": {
