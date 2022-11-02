@@ -1673,6 +1673,7 @@ final class PhtmlTagsTest extends TestCase
     }
 
     /**
+     * @group skip
      * @test
      * @return void
      * @throws Exception
@@ -1701,6 +1702,7 @@ Title
     }
 
     /**
+     * @group skip
      * @test
      * @return void
      * @throws Exception
