@@ -40,7 +40,6 @@ jobs:
       with:
         directory: ./build/log/
         fail_ci_if_error: true
-        files: ./clover.xml
         flags: unittests
         name: codecov-umbrella
         verbose: true
