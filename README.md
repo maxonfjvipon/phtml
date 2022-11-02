@@ -68,7 +68,7 @@ html5(
 )->asString();
 ```
 
-will render you this html:
+will render to you this html:
 ```html
 <!DOCTYPE html>
 <html>
@@ -93,7 +93,7 @@ use function Maxonfjvipon\Phtml\{a, attr};
 a(attr(['href' => '/some/url', "download"]))->asString(); // <a href='/some/url' download></a>
 ```
 
-Attributes will render only if they are at the first place. Other attributes on other places will be ignored.
+Attributes will be rendered only if they are at the first place. Other attributes on other places will be ignored.
 ```php
 use function Maxonfjvipon\Phtml\{a, attr};
 
