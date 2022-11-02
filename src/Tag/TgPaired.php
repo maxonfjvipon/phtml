@@ -70,10 +70,7 @@ final class TgPaired extends TxtWrap implements Tag
                         new IsAttributes($any)
                     ),
                     TxtOf::func(fn () => new TxtTrimmed(
-                        new TxtJoined([
-                            "$name ",
-                            $any
-                        ])
+                        new TxtJoined(["$name ", $any]) /** @phpstan-ignore-line */
                     )),
                     $name
                 ),

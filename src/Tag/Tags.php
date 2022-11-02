@@ -30,7 +30,6 @@ use Maxonfjvipon\ElegantElephant\Arr\ArrMapped;
 use Maxonfjvipon\ElegantElephant\Txt;
 use Maxonfjvipon\ElegantElephant\Txt\EnsureTxt;
 use Maxonfjvipon\ElegantElephant\Txt\TxtRtrimmed;
-use Maxonfjvipon\ElegantElephant\Txt\TxtToString;
 use Maxonfjvipon\ElegantElephant\Txt\TxtWrap;
 use Maxonfjvipon\ElegantElephant\Txt\TxtJoined;
 use Maxonfjvipon\Phtml\Tag;

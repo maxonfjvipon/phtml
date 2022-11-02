@@ -55,7 +55,7 @@ final class TgUnpaired extends TxtWrap implements Tag
                 new TxtTrimmed(
                     new TxtCond(
                         !!$attributes,
-                        TxtOf::func(fn () => new TxtJoined([
+                        TxtOf::func(fn () => new TxtJoined([ /** @phpstan-ignore-line */
                             "$name ",
                             $attributes
                         ])),

@@ -1,5 +1,6 @@
 {
   "name": "maxonfjvipon/phtml",
+  "description": "Pure object-oriented HTML construction templating library with functional interface",
   "license": ["MIT"],
   "authors": [
     {
@@ -11,8 +12,12 @@
     "maxonfjvipon/elegant-elephant": "^4.3"
   },
   "require-dev": {
-    "phpunit/php-code-coverage": "^9.2",
-    "phpunit/phpunit": "^9.0"
+    "phpstan/phpstan": "^1.8",
+    "phpunit/phpunit": "^9.0",
+    "php-coveralls/php-coveralls": "^2.5"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
   },
   "autoload": {
     "psr-4": {

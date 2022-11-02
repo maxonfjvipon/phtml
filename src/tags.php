@@ -64,7 +64,7 @@ function paired(
 /**
  * Create tag attributes.
  *
- * @param array $attributes
+ * @param array<string|int, string> $attributes
  * @return Attributes
  */
 function attr(array $attributes = []): Attributes
