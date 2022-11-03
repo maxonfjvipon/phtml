@@ -1,0 +1,1 @@
+composer run-script pre-push

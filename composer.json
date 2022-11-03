@@ -20,7 +20,8 @@
   "scripts": {
     "test": "vendor/bin/phpunit --exclude skip",
     "coverage": "vendor/bin/coverage-check build/logs/clover.xml 100",
-    "pre-push": "composer run-script test && composer run-script coverage"
+    "phpstan": "vendor/bin/phpstan analyze src tests --xdebug",
+    "pre-push": "composer run-script test && composer run-script coverage && composer run-script phpstan"
   },
   "autoload": {
     "psr-4": {
