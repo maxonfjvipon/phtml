@@ -18,9 +18,9 @@
     "rregeer/phpunit-coverage-check": "^0.3.1"
   },
   "scripts": {
-    "test": "vendor/bin/phpunit --exclude skip",
+    "test": "vendor/bin/phpunit --exclude skip --coverage-clover build/logs/clover.xml",
     "coverage": "vendor/bin/coverage-check build/logs/clover.xml 100",
-    "phpstan": "vendor/bin/phpstan analyze src tests --xdebug",
+    "phpstan": "vendor/bin/phpstan analyze src tests",
     "pre-push": "composer run-script test && composer run-script coverage && composer run-script phpstan"
   },
   "autoload": {
