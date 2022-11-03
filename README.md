@@ -2,8 +2,11 @@
 
 phtml is pure object-oriented HTML construction templating library for PHP with functional interface, inspired by [JavaTags](https://github.com/manlioGit/javatags) and [ScalaTags](https://github.com/lihaoyi/scalatags). 
 
-[![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org) 
+[![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org)
+[![DevOps By Rultor.com](http://www.rultor.com/b/maxonfjvipon/phtml)](http://www.rultor.com/p/maxonfjvipon/phtml)
+
 [![codecov](https://codecov.io/github/maxonfjvipon/phtml/branch/master/graph/badge.svg?token=Q122MWPT8J)](https://codecov.io/github/maxonfjvipon/phtml)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/maxonfjvipon/phtml/blob/master/LICENSE)
 
 This fragment:
 
