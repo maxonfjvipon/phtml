@@ -11,7 +11,7 @@ merge:
     echo "### Validate composer.json and composer.lock"
     composer validate --strict
     echo "### Install dependencies"
-    apt-get install php-xml php-mbstring -y
+    apt-get install php-xml php-mbstring php-xdebug -y
     composer install --prefer-dist --no-progress
     echo "### Run PHPStan"
     composer run-script phpstan
