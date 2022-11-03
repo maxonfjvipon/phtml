@@ -33,7 +33,7 @@ namespace Maxonfjvipon\Phtml;
 final class at
 {
     /*************
-     * Universal *
+     * Common *
      *************/
     public const accesskey = 'accesskey';
     public const _class = 'class';
