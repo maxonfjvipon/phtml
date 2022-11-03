@@ -8,28 +8,33 @@ merge:
   commanders:
     - maxonfjvipon
   script: |-
-    echo "### Validate composer.json and composer.lock"
     composer validate --strict
-    echo "### Install dependencies"
+    
     apt-get install php-xml php-mbstring php-xdebug -y
+    
+    echo 'xdebug.mode=coverage' >> /usr/local/etc/php/php.ini
+    
     composer install --prefer-dist --no-progress
-    echo "### Run PHPStan"
+    
     composer run-script phpstan
-    echo "### Run tests"
+    
     composer run-script test
-    echo "### Check coverage"
+
     composer run-script coverage
 release:
   script: |-
     [[ "${tag}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit -1
-    echo "### Validate composer.json and composer.lock"
+    
     composer validate --strict
-    echo "### Install dependencies"
+
     apt-get install php-xml php-mbstring -y
+    
+    echo 'xdebug.mode=coverage' >> /usr/local/etc/php/php.ini
+    
     composer install --prefer-dist --no-progress
-    echo "### Run PHPStan"
+    
     composer run-script phpstan
-    echo "### Run tests"
+    
     composer run-script test
-    echo "### Check coverage"
+    
     composer run-script coverage
