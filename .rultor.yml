@@ -26,7 +26,7 @@ release:
     [[ "${tag}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit -1
     
     composer validate --strict
-
+    
     apt-get install php-xml php-mbstring php-xdebug -y
     
     echo 'xdebug.mode=coverage' >> /etc/php/8.1/cli/php.ini
@@ -36,5 +36,5 @@ release:
     composer run-script phpstan
     
     composer run-script test
-    
+
     composer run-script coverage
