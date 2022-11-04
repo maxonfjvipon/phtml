@@ -56,8 +56,7 @@ function paired(
     string                         $name,
     string|Attributes|Tag|Txt|null $any = null,
     string|Tag|Txt                 ...$elements
-): Tag
-{
+): Tag {
     return new TgPaired($name, $any, ...$elements);
 }
 

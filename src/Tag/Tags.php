@@ -55,7 +55,7 @@ final class Tags extends TxtWrap implements Tag
                 new TxtJoined(
                     new ArrMapped(
                         $tags,
-                        fn(string|Tag|Txt $tag) => $this->ensuredString($tag) . "\n"
+                        fn (string|Tag|Txt $tag) => $this->ensuredString($tag) . "\n"
                     )
                 )
             )

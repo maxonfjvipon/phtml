@@ -32,6 +32,9 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
+    - name: Run PHP CS-fixer
+      run: composer run-script "cs-fixer dry"
+
     - name: Run PHPStan
       run: composer run-script phpstan
 

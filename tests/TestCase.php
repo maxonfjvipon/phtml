@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Maxonfjvipon\Phtml\Tests;
+
 use Exception;
 use Maxonfjvipon\ElegantElephant\Logic;
 use Maxonfjvipon\ElegantElephant\Txt;
@@ -24,8 +25,7 @@ class TestCase extends BaseTestCase
         Tag|Txt|Attributes $tag,
         Constraint $constraint,
         string $message = ''
-    ): void
-    {
+    ): void {
         $this->assertThat(
             $tag->asString(),
             $constraint,
@@ -44,8 +44,7 @@ class TestCase extends BaseTestCase
         Logic $logic,
         Constraint $constraint,
         string $message = ''
-    ): void
-    {
+    ): void {
         $this->assertThat(
             $logic->asBool(),
             $constraint,

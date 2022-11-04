@@ -8,6 +8,7 @@ use PHPUnit\Framework\Constraint\IsEmpty;
 use PHPUnit\Framework\Constraint\IsEqual;
 
 use PHPUnit\Framework\Constraint\StringStartsWith;
+
 use function Maxonfjvipon\Phtml\{text,
     unpaired,
     paired,
@@ -1681,7 +1682,8 @@ final class PhtmlTagsTest extends TestCase
     public function simpleHtml(): void
     {
         $this->assertTxtThat(
-            html5(attr([at::lang => 'en']),
+            html5(
+                attr([at::lang => 'en']),
                 head(
                     meta(attr([at::http_equiv => 'Content-Type', at::content => 'text/html', at::charset => 'UTF-8'])),
                     title(text("Title")),
@@ -1710,7 +1712,8 @@ Title
     public function complexHtml(): void
     {
         $this->assertTxtThat(
-            html5(attr([at::lang => "ru"]),
+            html5(
+                attr([at::lang => "ru"]),
                 head(
                     meta(attr([at::http_equiv => "Content-Type", at::content => "text/html", at::charset => "UTF-8"])),
                     meta(attr([at::http_equiv => "X-UA-Compatible", at::content => "IE=edge"])),
@@ -1721,27 +1724,37 @@ Title
                     link(attr([at::href => '/css/nprogress.css', at::rel => 'stylesheet'])),
                     link(attr([at::href => '/css/custom.css', at::rel => 'stylesheet']))
                 ),
-                body(attr(['class' => "nav-md"]),
-                    div(attr(['class' => 'container-body']),
-                        div(attr(['class' => 'main-container']),
-                            div(attr(['class' => 'col-md-3 left_col']),
-                                div(attr(['class' => 'left_col scroll-view']),
-                                    div(attr(['class' => 'navbar nav_title', at::style => 'border: 0;']),
-                                        a(attr([at::href => "xx", 'class' => "site_title"]),
+                body(
+                    attr(['class' => "nav-md"]),
+                    div(
+                        attr(['class' => 'container-body']),
+                        div(
+                            attr(['class' => 'main-container']),
+                            div(
+                                attr(['class' => 'col-md-3 left_col']),
+                                div(
+                                    attr(['class' => 'left_col scroll-view']),
+                                    div(
+                                        attr(['class' => 'navbar nav_title', at::style => 'border: 0;']),
+                                        a(
+                                            attr([at::href => "xx", 'class' => "site_title"]),
                                             i(attr(["class" => "fa fa-paw"])),
                                             span(text("Gentellela Alela!"))
                                         )
                                     ),
                                     tags(...array_map(
-                                        fn($num) => div(attr(['class' => "item$num"])),
+                                        fn ($num) => div(attr(['class' => "item$num"])),
                                         [1, 2, 3, 4]
                                     )),
                                     div(attr(["class" => "clearfix"])),
-                                    div(attr(['class' => 'profile']),
-                                        div(attr(['class' => "profile_pic"]),
+                                    div(
+                                        attr(['class' => 'profile']),
+                                        div(
+                                            attr(['class' => "profile_pic"]),
                                             img(attr([at::src => "/images/site/img.jpg", at::alt => '...', 'class' => 'img-circle profile_img']))
                                         ),
-                                        div(attr(['class' => 'profile_info']),
+                                        div(
+                                            attr(['class' => 'profile_info']),
                                             span(text("Welcome")),
                                             h2(text("John Doe"))
                                         )

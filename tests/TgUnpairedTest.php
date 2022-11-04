@@ -42,6 +42,4 @@ final class TgUnpairedTest extends TestCase
             new IsEqual("<html class='main-html' id='lmth'/>")
         );
     }
-
-
 }

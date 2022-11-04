@@ -9,9 +9,11 @@
     }
   ],
   "require": {
+    "php": ">=8.0",
     "maxonfjvipon/elegant-elephant": "^4.3"
   },
   "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.13",
     "php-coveralls/php-coveralls": "^2.5",
     "phpstan/phpstan": "^1.8",
     "phpunit/phpunit": "^9.0",
@@ -21,7 +23,9 @@
     "test": "vendor/bin/phpunit --exclude skip",
     "coverage": "vendor/bin/coverage-check build/logs/clover.xml 100",
     "phpstan": "vendor/bin/phpstan analyze src tests",
-    "pre-push": "composer run-script test && composer run-script coverage && composer run-script phpstan"
+    "cs-fixer dry": "vendor/bin/php-cs-fixer fix src --dry-run -v --using-cache=no && vendor/bin/php-cs-fixer fix tests --dry-run -v --using-cache=no",
+    "cs-fixer fix": "vendor/bin/php-cs-fixer fix src -v --using-cache=no && vendor/bin/php-cs-fixer fix tests -v --using-cache=no",
+    "pre-push": "composer run-script \"cs-fixer dry\" && composer run-script phpstan && composer run-script test && composer run-script coverage"
   },
   "autoload": {
     "psr-4": {
