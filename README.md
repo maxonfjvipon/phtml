@@ -315,6 +315,14 @@ use function Maxonfjvipon\Phtml\{
 };
 ```
 
-### Tests
+### Contribution
 
-See [unit tests](https://github.com/maxonfjvipon/phtml/tree/master/tests) to get more details.
+Fork repository, make changes, send a pull request. To avoid frustration, before sending your pull request please run:
+
+```bash
+$ ./pre-push
+```
+
+And make sure you have no errors.
+Fork repository, make changes, send a pull request. To avoid frustration, before sending your pull request please run:
+Fork repository, make changes, send a pull request. To avoid frustration, before sending your pull request please run:
