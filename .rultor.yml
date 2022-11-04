@@ -16,11 +16,7 @@ merge:
     
     composer install --prefer-dist --no-progress
     
-    composer run-script phpstan
-    
-    composer run-script test
-
-    composer run-script coverage
+    ./pre-push.sh
 release:
   script: |-
     [[ "${tag}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || exit -1
@@ -33,8 +29,4 @@ release:
     
     composer install --prefer-dist --no-progress
     
-    composer run-script phpstan
-    
-    composer run-script test
-
-    composer run-script coverage
+    ./pre-push.sh
