@@ -27,7 +27,7 @@ release:
     
     composer validate --strict
 
-    apt-get install php-xml php-mbstring -y
+    apt-get install php-xml php-mbstring php-xdebug -y
     
     echo 'xdebug.mode=coverage' >> /etc/php/8.1/cli/php.ini
     
