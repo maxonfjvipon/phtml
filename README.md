@@ -5,9 +5,13 @@ phtml is pure object-oriented HTML construction templating library for PHP with 
 [![EO principles respected here](https://www.elegantobjects.org/badge.svg)](https://www.elegantobjects.org)
 [![DevOps By Rultor.com](http://www.rultor.com/b/maxonfjvipon/phtml)](http://www.rultor.com/p/maxonfjvipon/phtml)
 
+[![Composer](https://github.com/maxonfjvipon/phtml/actions/workflows/composer.yml/badge.svg)](https://github.com/maxonfjvipon/phtml/actions/workflows/composer.yml)
 [![codecov](https://codecov.io/github/maxonfjvipon/phtml/branch/master/graph/badge.svg?token=Q122MWPT8J)](https://codecov.io/github/maxonfjvipon/phtml)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/maxonfjvipon/phtml/blob/master/LICENSE)
 [![Hits-of-Code](https://hitsofcode.com/github/maxonfjvipon/phtml?branch=master)](https://hitsofcode.com/github/maxonfjvipon/phtml/view?branch=master)
+
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/maxonfjvipon/phtml/blob/master/LICENSE)
+[![Tag](https://img.shields.io/github/tag/maxonfjvipon/phtml.svg)](https://github.com/maxonfjvipon/phtml/releases)
+
 
 This fragment:
 
