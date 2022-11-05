@@ -324,5 +324,3 @@ $ ./pre-push
 ```
 
 And make sure you have no errors.
-Fork repository, make changes, send a pull request. To avoid frustration, before sending your pull request please run:
-Fork repository, make changes, send a pull request. To avoid frustration, before sending your pull request please run:
