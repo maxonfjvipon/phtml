@@ -320,7 +320,7 @@ use function Maxonfjvipon\Phtml\{
 Fork repository, make changes, send a pull request. To avoid frustration, before sending your pull request please run:
 
 ```bash
-$ ./pre-push
+$ ./pre-push.sh
 ```
 
 And make sure you have no errors.
